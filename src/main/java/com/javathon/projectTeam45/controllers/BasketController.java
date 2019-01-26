@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/")
@@ -30,4 +31,17 @@ public class BasketController {
 
         return "basket";
     }
+
+    @GetMapping("/basket/edit/{userId}/{eat_time}")
+    public String basketEdit(@RequestParam(name = "userId") Long userId,
+                             @RequestParam(name = "eat_time") Long eatTime) {
+
+        List<Basket> baskets = basketService.findByUserId(userId)
+                .stream().filter(x -> x.getEatTime().equals(eatTime)).collect(Collectors.toList());
+
+        List<Items> items = itemService.items(baskets);
+
+        return "basket";
+    }
+
 }
