@@ -18,7 +18,7 @@ import com.javathon.projectTeam45.services.UserService;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    UserService userService;
+    private UserService userService;
     @Autowired
     private PasswordEncoder passwordEncoder;
 
