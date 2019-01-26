@@ -1,29 +1,34 @@
 package com.javathon.projectTeam45.entity;
 
-import com.javathon.projectTeam45.enums.Role;
-
 import javax.persistence.*;
-import java.util.Set;
 
 /**
- * This is list of all shops connected with location.
+ * Класс, отвечающий за создание датамодели магазинов
  */
 @Entity
 public class Shops {
 
-    private String id;
+    public Shops() { }
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "shop_id")
+    private Long id;
+
+    @Column(name = "shop_name")
     private String shopName;
 
+    @Column(name = "shop_location")
     private String shopLocation;
 
+    @Column(name = "shop_priority")
     private Long priority;
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
