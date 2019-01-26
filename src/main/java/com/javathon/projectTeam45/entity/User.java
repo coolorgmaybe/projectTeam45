@@ -15,7 +15,7 @@ import java.util.Set;
  *     Пользователи хранятся в БД
  */
 @Entity
-@Table(name = "usr")
+@Table(name = "user")
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,28 +25,38 @@ public class User implements UserDetails {
     @NotBlank(message = "Username can not be empty")
     @Column(name = "username")
     private String username;
+
     @NotBlank(message = "Password can not be empty")
     @Column(name = "password")
     private String password;
+
     @Transient
     @NotBlank(message = "Password confirm can not be empty")
     private String password_2;
+
     @NotBlank(message = "Email can not be empty")
     @Pattern(regexp = "^(?:[a-zA-Z0-9_'^&/+-])+(?:\\.(?:[a-zA-Z0-9_'^&/+-])+)" +
             "*@(?:(?:\\[?(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))\\.)" +
             "{3}(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\]?)|(?:[a-zA-Z0-9-]+\\.)" +
             "+(?:[a-zA-Z]){2,}\\.?)$")
+
     @Column(name = "email")
     private String email;
+
     @Column(name = "region")
     private String region;
+
     private boolean isActive;
+
     @Column(name = "home_location")
     private String homeLocation;
+
     @Column(name = "job_location")
     private String jobLocation;
+
     @Column(name = "most_frequency_location")
     private String mostFrequencyLocation;
+
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(value = EnumType.STRING)
