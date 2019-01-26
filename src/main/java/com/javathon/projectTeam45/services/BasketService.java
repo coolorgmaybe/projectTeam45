@@ -1,0 +1,71 @@
+package com.javathon.projectTeam45.services;
+
+import com.javathon.projectTeam45.entity.Basket;
+import com.javathon.projectTeam45.entity.EatTime;
+import com.javathon.projectTeam45.entity.Items;
+import com.javathon.projectTeam45.repos.BasketRepo;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+public class BasketService {
+
+    private BasketRepo basketRepo;
+
+    @Autowired
+    public BasketService(BasketRepo basketRepo) {
+        this.basketRepo = basketRepo;
+    }
+
+    public List<Basket> findByUserId(Long id) {
+        return basketRepo.findAllById(Collections.singletonList(id));
+    }
+
+    public boolean addNewBasket(Basket basket) {
+        Basket basketFromDb = basketRepo.findAllById(Collections.singletonList(basket.getUser_id()))
+                .stream()
+                .filter(x -> x.getItem_id().equals(basket.getItem_id()))
+                .collect(Collectors.toList()).get(0);
+
+        if (basketFromDb != null) {
+            return false;
+        }
+
+        basketRepo.save(basket);
+        return true;
+    }
+
+    public void changeBasket(Basket basket, EatTime eatTimeId) {
+        Basket basketFromDb = basketRepo.findAllById(Collections.singletonList(basket.getUser_id()))
+                .stream()
+                .filter(x -> x.getItem_id().equals(basket.getItem_id()))
+                .collect(Collectors.toList()).get(0);
+
+
+        if (basketFromDb == null) { basketRepo.save(basket); }
+        else {
+            basketRepo.delete(basket);
+            basketFromDb.setEatTime(eatTimeId.getEatTimeId());
+            basketRepo.save(basketFromDb);
+        }
+    }
+
+    public void changeBasket(Basket basket, Items item) {
+        Basket basketFromDb = basketRepo.findAllById(Collections.singletonList(basket.getUser_id()))
+                .stream()
+                .filter(x -> x.getItem_id().equals(basket.getItem_id()))
+                .collect(Collectors.toList()).get(0);
+
+
+        if (basketFromDb == null) { basketRepo.save(basket); }
+        else {
+            basketRepo.delete(basket);
+            basketFromDb.setEatTime(item.getId());
+            basketRepo.save(basketFromDb);
+        }
+    }
+}

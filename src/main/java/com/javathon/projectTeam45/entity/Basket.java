@@ -15,28 +15,28 @@ public class Basket {
     @Id
     @NotBlank(message = "user_id can not be empty")
     @Column(name = "user_id")
-    private String user_id;
+    private Long user_id;
 
     @NotBlank(message = "item_id can not be empty")
     @Column(name = "item_id")
-    private String item_id;
+    private Long item_id;
 
     @Column(name = "eat_time_id")
     private Long eatTimeId;
 
-    public String getUser_id() {
+    public Long getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(String user_id) {
+    public void setUser_id(Long user_id) {
         this.user_id = user_id;
     }
 
-    public String getItem_id() {
+    public Long getItem_id() {
         return item_id;
     }
 
-    public void setItem_id(String item_id) {
+    public void setItem_id(Long item_id) {
         this.item_id = item_id;
     }
 
