@@ -38,6 +38,11 @@ public class RegistrationController {
             return "registration";
         }
 
+        if (!userService.addUser(user)) {
+            model.addAttribute("usernameError", "User exists!");
+            return "registration";
+        }
+
         return "redirect:/login";
     }
 }
