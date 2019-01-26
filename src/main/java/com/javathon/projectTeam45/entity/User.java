@@ -19,11 +19,14 @@ import java.util.Set;
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "user_id")
     private Long id;
 
     @NotBlank(message = "Username can not be empty")
+    @Column(name = "username")
     private String username;
     @NotBlank(message = "Password can not be empty")
+    @Column(name = "password")
     private String password;
     @Transient
     @NotBlank(message = "Password confirm can not be empty")
@@ -33,20 +36,25 @@ public class User implements UserDetails {
             "*@(?:(?:\\[?(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))\\.)" +
             "{3}(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\]?)|(?:[a-zA-Z0-9-]+\\.)" +
             "+(?:[a-zA-Z]){2,}\\.?)$")
+    @Column(name = "email")
     private String email;
+    @Column(name = "region")
     private String region;
     private boolean isActive;
+    @Column(name = "home_location")
     private String homeLocation;
+    @Column(name = "job_location")
     private String jobLocation;
+    @Column(name = "most_frequency_location")
     private String mostFrequencyLocation;
-
-    public User() {
-    }
-
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(value = EnumType.STRING)
+    @Column(name = "roles")
     private Set<Role> roles;
+
+    public User() {
+    }
 
     public Long getId() {
         return id;
