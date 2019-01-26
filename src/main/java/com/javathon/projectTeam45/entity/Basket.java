@@ -2,7 +2,6 @@ package com.javathon.projectTeam45.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import java.math.BigInteger;
 import java.util.List;
 
 /**
@@ -41,14 +40,15 @@ public class Basket {
         this.id = id;
     }
 
-    @OneToMany private List<Integer> baskets;
+    @OneToMany
+    private List<Integer> eatTime;
 
-    public List<Integer> getBaskets() {
-        return baskets;
+    public List<Integer> getEatTime() {
+        return eatTime;
     }
 
-    public void setBaskets(List<Integer> baskets) {
-        this.baskets = baskets;
+    public void setEatTime(List<Integer> eatTime) {
+        this.eatTime = eatTime;
     }
 
     public String getUser_id() {
