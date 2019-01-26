@@ -12,6 +12,7 @@ import java.util.Set;
 /**
  * Класс пользователей <br>
  *     Пользователи хранятся в БД
+ *
  */
 @Entity
 //@Table(name = "usr")
