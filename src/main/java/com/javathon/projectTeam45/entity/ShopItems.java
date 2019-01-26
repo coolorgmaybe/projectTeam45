@@ -13,10 +13,11 @@ public class ShopItems {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
+    @Column(name = "shop_id")
     private Long shopId;
 
-    @Column(name = "item_id")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "item_id")
     private String itemId;
 
     @Column(name = "count")

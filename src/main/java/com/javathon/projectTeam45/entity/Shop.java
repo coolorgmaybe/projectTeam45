@@ -6,9 +6,9 @@ import javax.persistence.*;
  * Класс, отвечающий за создание датамодели магазинов
  */
 @Entity
-public class Shops {
+public class Shop {
 
-    public Shops() { }
+    public Shop() { }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
