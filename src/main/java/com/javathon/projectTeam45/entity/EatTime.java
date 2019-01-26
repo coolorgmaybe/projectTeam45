@@ -7,6 +7,7 @@ import javax.persistence.*;
  */
 
 @Entity
+@Table(name = "eatTime")
 public class EatTime {
 
     public EatTime() { }
@@ -16,8 +17,7 @@ public class EatTime {
     @Column(name = "user_id")
     private Long userId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "item_id")
+    @JoinColumn(name = "eat_time_id")
     private Long eatTimeId;
 
     @Column(name = "start")

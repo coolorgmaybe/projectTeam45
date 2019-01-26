@@ -7,6 +7,7 @@ import javax.persistence.*;
  */
 
 @Entity
+@Table(name = "items")
 public class Items {
 
     public Items() { }

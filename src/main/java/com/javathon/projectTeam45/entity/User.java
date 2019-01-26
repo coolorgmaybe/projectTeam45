@@ -15,7 +15,7 @@ import java.util.Set;
  *     Пользователи хранятся в БД
  */
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

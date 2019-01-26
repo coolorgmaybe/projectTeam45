@@ -8,6 +8,7 @@ import javax.validation.constraints.NotBlank;
  */
 
 @Entity
+@Table(name = "basket")
 public class Basket {
 
     public Basket() { }

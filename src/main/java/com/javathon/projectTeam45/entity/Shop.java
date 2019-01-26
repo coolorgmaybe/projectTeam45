@@ -6,6 +6,7 @@ import javax.persistence.*;
  * Класс, отвечающий за создание датамодели магазинов
  */
 @Entity
+@Table(name = "shop")
 public class Shop {
 
     public Shop() { }

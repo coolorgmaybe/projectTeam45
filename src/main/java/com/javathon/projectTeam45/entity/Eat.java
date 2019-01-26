@@ -3,6 +3,7 @@ package com.javathon.projectTeam45.entity;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "eat")
 public class Eat {
 
     public Eat() {

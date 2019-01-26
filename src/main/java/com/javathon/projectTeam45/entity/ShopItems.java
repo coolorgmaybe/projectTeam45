@@ -7,18 +7,17 @@ import javax.persistence.*;
  */
 
 @Entity
+@Table(name = "shopItems")
 public class ShopItems {
 
     public ShopItems() { }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "shop_id")
+    @JoinColumn(name = "shop_id")
     private Long shopId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "item_id")
-    private String itemId;
+    private Long itemId;
 
     @Column(name = "count")
     private Long count;
@@ -34,11 +33,11 @@ public class ShopItems {
         this.shopId = shopId;
     }
 
-    public String getItemId() {
+    public Long getItemId() {
         return itemId;
     }
 
-    public void setItemId(String itemId) {
+    public void setItemId(Long itemId) {
         this.itemId = itemId;
     }
 
