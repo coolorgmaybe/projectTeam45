@@ -29,7 +29,6 @@ public class User implements UserDetails {
     private String jobLocation;
     private String mostFrequencyLocation;
 
-
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(value = EnumType.STRING)
@@ -72,7 +71,7 @@ public class User implements UserDetails {
     }
 
     /**
-     * Пользователь получает права, исходя из имеющихся ролей
+     * Пользователь получает права, исходя из имеющихся ролей.
      *
      * @return роли пользователя
      */
