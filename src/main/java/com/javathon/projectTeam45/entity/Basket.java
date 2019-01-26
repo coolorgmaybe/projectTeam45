@@ -2,10 +2,11 @@ package com.javathon.projectTeam45.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.math.BigInteger;
 import java.util.List;
 
 /**
- * This is class for users basket. This directly connects with users.
+ * Класс, отвечающий за датамодель корзины пользователя
  */
 
 @Entity
@@ -32,6 +33,14 @@ public class Basket {
     @Column(name = "count")
     private Long count;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     @OneToMany private List<Integer> baskets;
 
     public List<Integer> getBaskets() {
@@ -40,14 +49,6 @@ public class Basket {
 
     public void setBaskets(List<Integer> baskets) {
         this.baskets = baskets;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getUser_id() {

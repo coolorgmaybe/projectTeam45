@@ -1,15 +1,20 @@
 package com.javathon.projectTeam45.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.*;
+
+/**
+ * КЛасс, отвечающий за создание датамодели для Времени приема пищи
+ */
 
 @Entity
 public class EatTime {
 
     public EatTime() { }
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_id")
-    private String userId;
+    private Long userId;
 
     @Column(name = "breakfast_start")
     private Long BreakfastStart;
@@ -29,8 +34,12 @@ public class EatTime {
     @Column(name = "dinner_end")
     private Long DinnerEnd;
 
-    public String getUserId() {
+    public Long getUserId() {
         return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public Long getBreakfastStart() {
@@ -47,10 +56,6 @@ public class EatTime {
 
     public void setBreakfastEnd(Long breakfastEnd) {
         BreakfastEnd = breakfastEnd;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
     }
 
     public Long getLunchStart() {

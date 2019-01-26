@@ -1,10 +1,9 @@
 package com.javathon.projectTeam45.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 /**
- * This is list of items connected with shop by shop_Id.
+ * Класс, отвечающий за создание датамодели айтемов, принадлежащих конкретному магазину
  */
 
 @Entity
@@ -12,8 +11,10 @@ public class ShopItems {
 
     public ShopItems() { }
 
-    @Column(name = "shop_id")
-    private String shopId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    private Long shopId;
 
     @Column(name = "item_id")
     private String itemId;
@@ -24,12 +25,12 @@ public class ShopItems {
     @Column(name = "price")
     private Long price;
 
-    public String getShopItem() {
+    public Long getShopId() {
         return shopId;
     }
 
-    public void setShopItem(String shopItem) {
-        this.shopId = shopItem;
+    public void setShopId(Long shopId) {
+        this.shopId = shopId;
     }
 
     public String getItemId() {
@@ -48,11 +49,11 @@ public class ShopItems {
         this.count = count;
     }
 
-    public Long getPrive() {
+    public Long getPrice() {
         return price;
     }
 
-    public void setPrive(Long prive) {
-        this.price = prive;
+    public void setPrice(Long price) {
+        this.price = price;
     }
 }

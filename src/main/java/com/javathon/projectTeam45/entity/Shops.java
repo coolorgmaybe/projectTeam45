@@ -3,15 +3,17 @@ package com.javathon.projectTeam45.entity;
 import javax.persistence.*;
 
 /**
- * This is list of all shops connected with location.
+ * Класс, отвечающий за создание датамодели магазинов
  */
 @Entity
 public class Shops {
 
     public Shops() { }
 
-    @Column(name = "id")
-    private String id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "shop_id")
+    private Long id;
 
     @Column(name = "shop_name")
     private String shopName;
@@ -22,11 +24,11 @@ public class Shops {
     @Column(name = "shop_priority")
     private Long priority;
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

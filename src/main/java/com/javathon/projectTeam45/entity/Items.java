@@ -1,10 +1,9 @@
 package com.javathon.projectTeam45.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 /**
- * This is list of items. Every item is a uniq element.
+ * Класс, отвечающий за создания датамодели отдельного элемента продукта
  */
 
 @Entity
@@ -12,8 +11,10 @@ public class Items {
 
     public Items() { }
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "item_id")
-    private String id;
+    private Long id;
 
     @Column(name = "item_name")
     private String itemsName;
@@ -26,11 +27,11 @@ public class Items {
         this.itemsName = itemsName;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 }
