@@ -1,5 +1,6 @@
 package com.javathon.projectTeam45.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 
 /**
@@ -9,8 +10,12 @@ import javax.persistence.Entity;
 @Entity
 public class Items {
 
+    public Items() { }
+
+    @Column(name = "item_id")
     private String id;
 
+    @Column(name = "item_name")
     private String itemsName;
 
     public String getItemsName() {

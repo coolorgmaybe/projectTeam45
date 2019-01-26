@@ -1,9 +1,6 @@
 package com.javathon.projectTeam45.entity;
 
-import com.javathon.projectTeam45.enums.Role;
-
 import javax.persistence.*;
-import java.util.Set;
 
 /**
  * This is list of all shops connected with location.
@@ -11,12 +8,18 @@ import java.util.Set;
 @Entity
 public class Shops {
 
+    public Shops() { }
+
+    @Column(name = "id")
     private String id;
 
+    @Column(name = "shop_name")
     private String shopName;
 
+    @Column(name = "shop_location")
     private String shopLocation;
 
+    @Column(name = "shop_priority")
     private Long priority;
 
     public String getId() {

@@ -2,6 +2,7 @@ package com.javathon.projectTeam45.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.util.List;
 
 /**
  * This is class for users basket. This directly connects with users.
@@ -10,18 +11,36 @@ import javax.validation.constraints.NotBlank;
 @Entity
 public class Basket {
 
+    public Basket() { }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "basket_id")
     private Long id;
 
     @NotBlank(message = "user_id can not be empty")
+    @Column(name = "user_id")
     private String user_id;
+
     @NotBlank(message = "item_id can not be empty")
+    @Column(name = "item_id")
     private String item_id;
 
+    @Column(name = "price")
     private Long price;
+
+    @Column(name = "count")
     private Long count;
-    private String timeOfOrder;
+
+    @OneToMany private List<Integer> baskets;
+
+    public List<Integer> getBaskets() {
+        return baskets;
+    }
+
+    public void setBaskets(List<Integer> baskets) {
+        this.baskets = baskets;
+    }
 
     public Long getId() {
         return id;
@@ -63,11 +82,4 @@ public class Basket {
         this.count = count;
     }
 
-    public String getTimeOfOrder() {
-        return timeOfOrder;
-    }
-
-    public void setTimeOfOrder(String timeOfOrder) {
-        this.timeOfOrder = timeOfOrder;
-    }
 }

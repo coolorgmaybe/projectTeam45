@@ -1,5 +1,6 @@
 package com.javathon.projectTeam45.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 
 /**
@@ -7,22 +8,28 @@ import javax.persistence.Entity;
  */
 
 @Entity
-public class ShopItem {
+public class ShopItems {
 
-    private String shopItem;
+    public ShopItems() { }
 
+    @Column(name = "shop_id")
+    private String shopId;
+
+    @Column(name = "item_id")
     private String itemId;
 
+    @Column(name = "count")
     private Long count;
 
-    private Long prive;
+    @Column(name = "price")
+    private Long price;
 
     public String getShopItem() {
-        return shopItem;
+        return shopId;
     }
 
     public void setShopItem(String shopItem) {
-        this.shopItem = shopItem;
+        this.shopId = shopItem;
     }
 
     public String getItemId() {
@@ -42,10 +49,10 @@ public class ShopItem {
     }
 
     public Long getPrive() {
-        return prive;
+        return price;
     }
 
     public void setPrive(Long prive) {
-        this.prive = prive;
+        this.price = prive;
     }
 }
