@@ -16,23 +16,16 @@ public class EatTime {
     @Column(name = "user_id")
     private Long userId;
 
-    @Column(name = "breakfast_start")
-    private Long BreakfastStart;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "item_id")
+    private Long eatTimeId;
 
-    @Column(name = "breakfast_end")
-    private Long BreakfastEnd;
+    @Column(name = "start")
+    private Long start;
 
-    @Column(name = "lunch_start")
-    private Long LunchStart;
+    @Column(name = "end")
+    private Long end;
 
-    @Column(name = "lunch_end")
-    private Long LunchEnd;
-
-    @Column(name = "dinner_start")
-    private Long DinnerStart;
-
-    @Column(name = "dinner_end")
-    private Long DinnerEnd;
 
     public Long getUserId() {
         return userId;
@@ -42,53 +35,27 @@ public class EatTime {
         this.userId = userId;
     }
 
-    public Long getBreakfastStart() {
-        return BreakfastStart;
+    public Long getEatTimeId() {
+        return eatTimeId;
     }
 
-    public void setBreakfastStart(Long breakfastStart) {
-        BreakfastStart = breakfastStart;
+    public void setEatTimeId(Long eatTimeId) {
+        this.eatTimeId = eatTimeId;
     }
 
-    public Long getBreakfastEnd() {
-        return BreakfastEnd;
+    public Long getStart() {
+        return start;
     }
 
-    public void setBreakfastEnd(Long breakfastEnd) {
-        BreakfastEnd = breakfastEnd;
+    public void setStart(Long start) {
+        this.start = start;
     }
 
-    public Long getLunchStart() {
-        return LunchStart;
+    public Long getEnd() {
+        return end;
     }
 
-    public void setLunchStart(Long lunchStart) {
-        LunchStart = lunchStart;
+    public void setEnd(Long end) {
+        this.end = end;
     }
-
-    public Long getLunchEnd() {
-        return LunchEnd;
-    }
-
-    public void setLunchEnd(Long lunchEnd) {
-        LunchEnd = lunchEnd;
-    }
-
-    public Long getDinnerStart() {
-        return DinnerStart;
-    }
-
-    public void setDinnerStart(Long dinnerStart) {
-        DinnerStart = dinnerStart;
-    }
-
-    public Long getDinnerEnd() {
-        return DinnerEnd;
-    }
-
-    public void setDinnerEnd(Long dinnerEnd) {
-        DinnerEnd = dinnerEnd;
-    }
-
-
 }
