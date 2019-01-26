@@ -1,7 +1,7 @@
-package services;
+package com.javathon.projectTeam45.services;
 
-import entity.User;
-import enums.Role;
+import com.javathon.projectTeam45.entity.User;
+import com.javathon.projectTeam45.enums.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
-import repos.UserRepo;
+import com.javathon.projectTeam45.repos.UserRepo;
 
 import java.util.*;
 import java.util.stream.Collectors;

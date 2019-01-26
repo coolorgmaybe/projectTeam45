@@ -1,6 +1,6 @@
-package entity;
+package com.javathon.projectTeam45.entity;
 
-import enums.Role;
+import com.javathon.projectTeam45.enums.Role;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 

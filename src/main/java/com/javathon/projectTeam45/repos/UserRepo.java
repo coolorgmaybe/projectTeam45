@@ -1,6 +1,6 @@
-package repos;
+package com.javathon.projectTeam45.repos;
 
-import entity.User;
+import com.javathon.projectTeam45.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

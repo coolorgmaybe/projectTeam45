@@ -1,10 +1,10 @@
-package entity;
+package com.javathon.projectTeam45.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 /**
- * Class for Basket table in PostgresDB
+ * This is class for users basket. This directly connects with users.
  */
 
 @Entity
