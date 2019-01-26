@@ -26,6 +26,7 @@ public class EatTime {
     @Column(name = "end")
     private Long end;
 
+
     public Long getUserId() {
         return userId;
     }
