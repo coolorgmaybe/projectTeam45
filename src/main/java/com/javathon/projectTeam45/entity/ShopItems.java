@@ -13,7 +13,7 @@ public class ShopItems {
     public ShopItems() { }
 
     @Id
-    @JoinColumn(name = "id")
+    @Column(name = "id")
     private Long id;
 
     @JoinColumn(name = "shop_id")
