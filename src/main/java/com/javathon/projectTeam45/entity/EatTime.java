@@ -13,6 +13,9 @@ public class EatTime {
     public EatTime() { }
 
     @Id
+    @Column(name = "id")
+    private Long id;
+
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_id")
     private Long userId;
