@@ -24,7 +24,7 @@ public class ItemService {
     }
 
     private Items item(Basket basket) {
-        return itemsRepo.findById(basket.getItem_id()).get();
+        return itemsRepo.findById(basket.getItemId()).get();
     }
 
     public List<Items> items(List<Basket> baskets) {

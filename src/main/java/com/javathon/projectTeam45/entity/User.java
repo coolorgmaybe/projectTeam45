@@ -46,19 +46,17 @@ public class User implements UserDetails {
     @Column(name = "region")
     private String region;
 
-    private boolean isActive;
-
     @Column(name = "home_location")
     private String homeLocation;
 
     @Column(name = "job_location")
     private String jobLocation;
 
-    @Column(name = "mostfrequency_location")
+    @Column(name = "mostfrequencry_location")
     private String mostFrequencyLocation;
 
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
-    @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "id"))
+    @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "id"))
     @Enumerated(value = EnumType.STRING)
     @Column(name = "role")
     private Set<Role> roles;
@@ -121,11 +119,7 @@ public class User implements UserDetails {
     }
 
     public boolean isActive() {
-        return isActive;
-    }
-
-    public void setActive(boolean active) {
-        isActive = active;
+        return true;
     }
 
     public Set<Role> getRoles() {

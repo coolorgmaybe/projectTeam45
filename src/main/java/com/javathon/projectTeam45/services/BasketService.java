@@ -22,13 +22,15 @@ public class BasketService {
     }
 
     public List<Basket> findByUserId(Long id) {
-        return basketRepo.findAllById(Collections.singletonList(id));
+        return basketRepo.findByUserId(id);
     }
 
+
+
     public boolean addNewBasket(Basket basket) {
-        Basket basketFromDb = basketRepo.findAllById(Collections.singletonList(basket.getUser_id()))
+        Basket basketFromDb = basketRepo.findAllById(Collections.singletonList(basket.getUserId()))
                 .stream()
-                .filter(x -> x.getItem_id().equals(basket.getItem_id()))
+                .filter(x -> x.getItemId().equals(basket.getItemId()))
                 .collect(Collectors.toList()).get(0);
 
         if (basketFromDb != null) {
@@ -40,9 +42,9 @@ public class BasketService {
     }
 
     public void changeBasket(Basket basket, EatTime eatTimeId) {
-        Basket basketFromDb = basketRepo.findAllById(Collections.singletonList(basket.getUser_id()))
+        Basket basketFromDb = basketRepo.findAllById(Collections.singletonList(basket.getUserId()))
                 .stream()
-                .filter(x -> x.getItem_id().equals(basket.getItem_id()))
+                .filter(x -> x.getItemId().equals(basket.getItemId()))
                 .collect(Collectors.toList()).get(0);
 
 
@@ -55,9 +57,9 @@ public class BasketService {
     }
 
     public void changeBasket(Basket basket, Items item) {
-        Basket basketFromDb = basketRepo.findAllById(Collections.singletonList(basket.getUser_id()))
+        Basket basketFromDb = basketRepo.findAllById(Collections.singletonList(basket.getUserId()))
                 .stream()
-                .filter(x -> x.getItem_id().equals(basket.getItem_id()))
+                .filter(x -> x.getItemId().equals(basket.getItemId()))
                 .collect(Collectors.toList()).get(0);
 
 
