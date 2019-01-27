@@ -24,10 +24,10 @@ public class EatTime {
     private Long eatTimeId;
 
     @Column(name = "start")
-    private Long start;
+    private String start;
 
     @Column(name = "end")
-    private Long end;
+    private String end;
 
 
     public Long getUserId() {
@@ -46,19 +46,19 @@ public class EatTime {
         this.eatTimeId = eatTimeId;
     }
 
-    public Long getStart() {
+    public String getStart() {
         return start;
     }
 
-    public void setStart(Long start) {
+    public void setStart(String start) {
         this.start = start;
     }
 
-    public Long getEnd() {
+    public String getEnd() {
         return end;
     }
 
-    public void setEnd(Long end) {
+    public void setEnd(String end) {
         this.end = end;
     }
 }

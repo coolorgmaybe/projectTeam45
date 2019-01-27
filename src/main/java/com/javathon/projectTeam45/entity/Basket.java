@@ -45,11 +45,11 @@ public class Basket {
         this.itemId = itemId;
     }
 
-    public Long getEatTime() {
+    public Long getEatTimeId() {
         return eatTimeId;
     }
 
-    public void setEatTime(Long eatTimeId) {
+    public void setEatTimeId(Long eatTimeId) {
         this.eatTimeId = eatTimeId;
     }
 }

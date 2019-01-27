@@ -12,6 +12,8 @@ public interface BasketRepo extends JpaRepository<Basket, Long> {
 
     List<Basket> findByUserId(Long userId);
 
+    List<Basket> findByEatTimeId (Long eatTime);
+
     @Override
     void delete(Basket basket);
 }

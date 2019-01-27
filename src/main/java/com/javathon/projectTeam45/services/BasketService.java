@@ -51,7 +51,7 @@ public class BasketService {
         if (basketFromDb == null) { basketRepo.save(basket); }
         else {
             basketRepo.delete(basket);
-            basketFromDb.setEatTime(eatTimeId.getEatTimeId());
+            basketFromDb.setEatTimeId(eatTimeId.getEatTimeId());
             basketRepo.save(basketFromDb);
         }
     }
@@ -66,7 +66,7 @@ public class BasketService {
         if (basketFromDb == null) { basketRepo.save(basket); }
         else {
             basketRepo.delete(basket);
-            basketFromDb.setEatTime(item.getId());
+            basketFromDb.setEatTimeId(item.getId());
             basketRepo.save(basketFromDb);
         }
     }
