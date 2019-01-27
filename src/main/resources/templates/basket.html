@@ -7,9 +7,6 @@
 <body>
 <section th:each="item : ${items}">
     <p th:text="${item.getItemsName()}"></p>
-    <ul>
-        <li th:each="item: ${item.getItemsName()}"></li>
-    </ul>
 </section>
 
 </body>

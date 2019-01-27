@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/basket")
 public class BasketController {
 
     @Autowired
@@ -25,7 +25,7 @@ public class BasketController {
     @Autowired
     private ItemService itemService;
 
-    @GetMapping("/basket/{userId}")
+    @GetMapping("/{userId}")
     public String basket(@PathVariable(name = "userId") Long userId, Model model) {
 
         List<Basket> baskets = basketService.findByUserId(userId);
@@ -36,7 +36,7 @@ public class BasketController {
         return "basket";
     }
 
-    @GetMapping("/basket/edit/{userId}/{eat_time}")
+    @GetMapping("/edit/{userId}/{eat_time}")
     public String basketEdit(@PathVariable(name = "userId") Long userId,
                              @PathVariable(name = "eat_time") Long eatTime) {
 
