@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface EatTimeRepo extends JpaRepository<EatTime, Long> {
-    List<EatTime> findByuserId(Long userId);
+    List<EatTime> findByUserId(Long userId);
 }
