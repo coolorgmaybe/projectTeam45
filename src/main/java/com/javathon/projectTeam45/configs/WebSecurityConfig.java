@@ -16,7 +16,6 @@ import com.javathon.projectTeam45.services.UserService;
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-@Lazy(value = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
