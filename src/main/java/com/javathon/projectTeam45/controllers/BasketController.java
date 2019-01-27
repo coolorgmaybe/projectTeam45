@@ -41,7 +41,7 @@ public class BasketController {
                              @PathVariable(name = "eat_time") Long eatTime) {
 
         List<Basket> baskets = basketService.findByUserId(userId)
-                .stream().filter(x -> x.getEatTime().equals(eatTime)).collect(Collectors.toList());
+                .stream().filter(x -> x.getEatTimeId().equals(eatTime)).collect(Collectors.toList());
 
         List<Items> items = itemService.items(baskets);
 
