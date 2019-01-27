@@ -51,10 +51,14 @@
 <div class="conteiner">
     <div class="row">
         <div class="col-sm">
-            One of 2 colums
+            <p><iframe src="https://yandex.ru/map-widget/v1/-/CVgQyK3F" width="560" height="400" frameborder="1" allowfullscreen="true"></iframe></p>
         </div>
         <div class="col-sm">
-            One of fsddfdsf colums
+            <label th:text="${shopName}"></label>
+            <tr th:each="map : ${shopMap}">
+                <td th:text="${map.key}">key value</td>
+                <td th:text="${map.value}">num</td>
+            </tr>
         </div>
     </div>
 </div>
