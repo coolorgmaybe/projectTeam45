@@ -19,15 +19,15 @@ import java.util.Set;
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "user_id")
+    @Column(name = "id")
     private Long id;
 
     @NotBlank(message = "Username can not be empty")
-    @Column(name = "username")
+    @Column(name = "uname")
     private String username;
 
     @NotBlank(message = "Password can not be empty")
-    @Column(name = "password")
+    @Column(name = "pwd")
     private String password;
 
     @Transient
@@ -54,13 +54,13 @@ public class User implements UserDetails {
     @Column(name = "job_location")
     private String jobLocation;
 
-    @Column(name = "most_frequency_location")
+    @Column(name = "mostfrequency_location")
     private String mostFrequencyLocation;
 
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
-    @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
+    @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "id"))
     @Enumerated(value = EnumType.STRING)
-    @Column(name = "roles")
+    @Column(name = "role")
     private Set<Role> roles;
 
     public User() {

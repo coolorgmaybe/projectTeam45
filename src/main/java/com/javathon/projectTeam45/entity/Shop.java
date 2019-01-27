@@ -13,7 +13,7 @@ public class Shop {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "shop_id")
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "shop_name")
@@ -22,7 +22,7 @@ public class Shop {
     @Column(name = "shop_location")
     private String shopLocation;
 
-    @Column(name = "shop_priority")
+    @Column(name = "priority")
     private Long priority;
 
     public Long getId() {

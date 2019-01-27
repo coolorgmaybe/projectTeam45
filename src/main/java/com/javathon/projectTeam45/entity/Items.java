@@ -14,10 +14,10 @@ public class Items {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "item_id")
+    @Column(name = "id")
     private Long id;
 
-    @Column(name = "item_name")
+    @Column(name = "name")
     private String itemsName;
 
     public String getItemsName() {
